@@ -1,0 +1,4 @@
+interface:
+  display_name: "JK AI Director · Writer"
+  short_description: "广告、短剧、网大、长片与系列剧的故事优先编剧系统"
+  default_prompt: "使用 $jk-ai-director-writer 按正确的格式和题材合同，把这个创意发展成可拍摄、可自检的剧本。"
