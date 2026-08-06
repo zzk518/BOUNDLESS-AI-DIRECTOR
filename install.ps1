@@ -9,6 +9,7 @@ $packageRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sourceRoot = Join-Path $packageRoot 'skills'
 $skillNames = @('boundless-ai-director-writer', 'boundless-ai-director')
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+$backupRoot = Join-Path (Split-Path -Parent $Destination) 'backups\BOUNDLESS-AI-DIRECTOR'
 
 New-Item -ItemType Directory -Force -Path $Destination | Out-Null
 
@@ -24,7 +25,8 @@ foreach ($skillName in $skillNames) {
         if (-not $Force) {
             throw "Already installed: $target. Re-run with -Force to create a backup and replace it."
         }
-        $backup = "$target.backup-$timestamp"
+        New-Item -ItemType Directory -Force -Path $backupRoot | Out-Null
+        $backup = Join-Path $backupRoot "$skillName-$timestamp"
         Move-Item -LiteralPath $target -Destination $backup
         Write-Output "Backed up: $backup"
     }

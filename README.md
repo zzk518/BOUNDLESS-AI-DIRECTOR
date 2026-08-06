@@ -65,4 +65,4 @@ powershell -ExecutionPolicy Bypass -File .\tests\skill-contract-tests.ps1
 
 ## 版本
 
-`2.0.0` — 项目与两个 Skill 全面更名为 BOUNDLESS AI DIRECTOR；最终母版继续使用双 DOCX 与微软雅黑交付合同。
+`2.0.1` — 项目与两个 Skill 全面更名为 BOUNDLESS AI DIRECTOR；修复强制安装备份被重复扫描的问题。

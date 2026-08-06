@@ -8,6 +8,7 @@ $skillsRoot = if (Test-Path -LiteralPath (Join-Path $projectRoot 'skills')) {
 }
 $writerRoot = Join-Path $skillsRoot 'boundless-ai-director-writer'
 $directorRoot = Join-Path $skillsRoot 'boundless-ai-director'
+$installScript = Get-Content -LiteralPath (Join-Path $projectRoot 'install.ps1') -Raw -Encoding UTF8
 
 function Read-All([string]$root) {
     return (Get-ChildItem -LiteralPath $root -Recurse -File -Filter '*.md' |
@@ -85,6 +86,8 @@ Assert-NoMatch 'No KL borrowing in director skill' $director 'KL-script-Visualiz
 $previousBrandPattern = ('J' + 'K AI Director') + '|' + ('j' + 'k-ai-director')
 Assert-NoMatch 'No previous project branding in writer skill' $writer $previousBrandPattern
 Assert-NoMatch 'No previous project branding in director skill' $director $previousBrandPattern
+Assert-Contains 'Backups stay outside skill scan root' $installScript @('backups\BOUNDLESS-AI-DIRECTOR', 'Join-Path $backupRoot', 'Move-Item -LiteralPath $target')
+Assert-NoMatch 'No indexed backup directories' $installScript '\$target\.backup-'
 Assert-ReferencesExist $writerRoot
 Assert-ReferencesExist $directorRoot
 
