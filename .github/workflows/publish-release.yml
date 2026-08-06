@@ -1,4 +1,4 @@
-name: Publish release
+name: Publish BOUNDLESS AI DIRECTOR release
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
       version:
         description: Release tag without the leading v
         required: true
-        default: 1.1.1
+        default: 2.0.0
 
 permissions:
   contents: write
@@ -22,14 +22,14 @@ jobs:
 
       - name: Build the shareable ZIP
         run: >-
-          zip -r JK-AI-Director-v${{ inputs.version }}.zip
+          zip -r BOUNDLESS-AI-DIRECTOR-v${{ inputs.version }}.zip
           README.md VERSION install.ps1 skills tests .gitignore
 
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
-          gh release create v${{ inputs.version }} JK-AI-Director-v${{ inputs.version }}.zip
+          gh release create v${{ inputs.version }} BOUNDLESS-AI-DIRECTOR-v${{ inputs.version }}.zip
           --repo "$GITHUB_REPOSITORY"
-          --title "JK AI Director v${{ inputs.version }}"
+          --title "BOUNDLESS AI DIRECTOR v${{ inputs.version }}"
           --notes "Text-only screenwriting and directing skills with locked-screenplay delivery, cinematic frame grammar, storyboard, continuity, visual assets, and image/video prompt contracts."

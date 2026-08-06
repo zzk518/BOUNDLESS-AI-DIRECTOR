@@ -6,8 +6,8 @@ $skillsRoot = if (Test-Path -LiteralPath (Join-Path $projectRoot 'skills')) {
 } else {
     Join-Path $projectRoot 'distilled-skills'
 }
-$writerRoot = Join-Path $skillsRoot 'jk-ai-director-writer'
-$directorRoot = Join-Path $skillsRoot 'jk-ai-director'
+$writerRoot = Join-Path $skillsRoot 'boundless-ai-director-writer'
+$directorRoot = Join-Path $skillsRoot 'boundless-ai-director'
 
 function Read-All([string]$root) {
     return (Get-ChildItem -LiteralPath $root -Recurse -File -Filter '*.md' |
@@ -78,9 +78,13 @@ Assert-Contains 'Reference isolation' $director @('每张参考最多抽取一�
 Assert-Contains 'Optional visual proof and poster route' $director @('可选三帧视觉证明组', '不固定为 21:9', '3:4 主海报', '没有明确请求时不增加海报工作量')
 Assert-Contains 'Final master package' $director @('01-锁定剧本.docx', '02-导演视觉方案.docx', '02-screenplay-change-log.md', '04-storyboard.csv/xlsx', '10-execution-manifest.md', '完整锁定剧本都不得省略')
 Assert-Contains 'Two-file DOCX delivery contract' $director @('01-锁定剧本.docx', '02-导演视觉方案.docx', '禁止合并', '全部文字区域统一使用微软雅黑')
+Assert-Contains 'BOUNDLESS project branding' ($writer + $director) @('BOUNDLESS AI DIRECTOR', 'boundless-ai-director-writer', 'boundless-ai-director')
 
 Assert-NoMatch 'No KL borrowing in writer skill' $writer 'KL-script-Visualizer'
 Assert-NoMatch 'No KL borrowing in director skill' $director 'KL-script-Visualizer'
+$previousBrandPattern = ('J' + 'K AI Director') + '|' + ('j' + 'k-ai-director')
+Assert-NoMatch 'No previous project branding in writer skill' $writer $previousBrandPattern
+Assert-NoMatch 'No previous project branding in director skill' $director $previousBrandPattern
 Assert-ReferencesExist $writerRoot
 Assert-ReferencesExist $directorRoot
 

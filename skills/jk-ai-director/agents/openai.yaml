@@ -1,4 +1,0 @@
-interface:
-  display_name: "JK AI Director"
-  short_description: "纯文字导演定调、电影画面语法、分镜资产与多镜视频提示词"
-  default_prompt: "使用 $jk-ai-director 把锁定剧本转化为纯文字的四轴导演方案、关系压力与视线流、连续性资产、电影分镜和同场景多镜视频提示词。"

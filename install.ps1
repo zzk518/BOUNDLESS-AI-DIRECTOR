@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $packageRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sourceRoot = Join-Path $packageRoot 'skills'
-$skillNames = @('jk-ai-director-writer', 'jk-ai-director')
+$skillNames = @('boundless-ai-director-writer', 'boundless-ai-director')
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 
 New-Item -ItemType Directory -Force -Path $Destination | Out-Null
