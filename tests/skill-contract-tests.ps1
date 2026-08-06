@@ -61,6 +61,7 @@ Assert-Contains 'Creator profile and first-view model' $writer @('positive_taste
 Assert-Contains 'Three-track rhythm calibration' $writer @('三轨节奏校准', '对白轨', '动作轨', '场景文本轨', '不可并行部分相加', '可并行部分取较长者')
 Assert-Contains 'Web movie route' $writer @('网大 / 网络电影', '周期性给予', '6–9 个序列')
 Assert-Contains 'Locked screenplay delivery' $writer @('完整锁定剧本', '剧本变更记录', '脱离聊天记录独立阅读', 'DOCX', 'Markdown')
+Assert-Contains 'Writer separate DOCX and font contract' $writer @('01-锁定剧本.docx', '不得与导演方案、分镜、视觉资产或提示词合并', '全部统一使用微软雅黑')
 
 Assert-Contains 'Director four axes' $director @('IMAGE / 画面', 'CAMERA / SPACE', 'INFORMATION / EMOTION', 'ACTION / WORLD')
 Assert-Contains 'Information and world contracts' $director @('信息—情绪合同', '揭示前观众判断', '行动—世界合同', '世界阻力', '四轴互锁')
@@ -75,7 +76,8 @@ Assert-Contains 'Physical camera and color source' $director @('机位区域', '
 Assert-Contains 'Controlled anti-template groups' $director @('受控变化', '不固定为“远景—中景—特写”', '遗留物收尾', '至少在以下字段中改变四项')
 Assert-Contains 'Reference isolation' $director @('每张参考最多抽取一个主维度', '保留的一个维度', '已替换的维度', '原创性风险')
 Assert-Contains 'Optional visual proof and poster route' $director @('可选三帧视觉证明组', '不固定为 21:9', '3:4 主海报', '没有明确请求时不增加海报工作量')
-Assert-Contains 'Final master package' $director @('01-locked-screenplay.docx', '02-screenplay-change-log.md', '04-storyboard.csv/xlsx', '10-execution-manifest.md', '完整锁定剧本都不得省略')
+Assert-Contains 'Final master package' $director @('01-锁定剧本.docx', '02-导演视觉方案.docx', '02-screenplay-change-log.md', '04-storyboard.csv/xlsx', '10-execution-manifest.md', '完整锁定剧本都不得省略')
+Assert-Contains 'Two-file DOCX delivery contract' $director @('01-锁定剧本.docx', '02-导演视觉方案.docx', '禁止合并', '全部文字区域统一使用微软雅黑')
 
 Assert-NoMatch 'No KL borrowing in writer skill' $writer 'KL-script-Visualizer'
 Assert-NoMatch 'No KL borrowing in director skill' $director 'KL-script-Visualizer'

@@ -51,7 +51,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -Force
 
 编剧模块完成后，可直接要求“现在分镜”，并把锁定后的剧本、人物、世界规则、时长和禁改项交给导演模块。
 
-默认在对话中以 Markdown 交付。要求“文档”“最终母版”或分享包时，使用 DOCX 人读主文档 + Markdown 可版本控制文本；CSV/XLSX 可作为分镜、场景或资产附表。完整锁定剧本始终包含在全流程最终母版中。
+默认在对话中以 Markdown 交付。要求“文档”“最终母版”或分享包时，固定输出两个独立主文档：`01-锁定剧本.docx` 与 `02-导演视觉方案.docx`，不得合并；两份 DOCX 的标题、正文、对白、表格、页眉页脚和中英文字符统一使用微软雅黑。另保留 Markdown 可版本控制文本，CSV/XLSX 可作为分镜、场景或资产附表。
 
 ## 自检
 
@@ -65,4 +65,4 @@ powershell -ExecutionPolicy Bypass -File .\tests\skill-contract-tests.ps1
 
 ## 版本
 
-`1.1.0` — 新增电影画面语法、受控反模板、参考隔离、可选视觉证明与完整母版交付合同。
+`1.1.1` — 最终母版固定拆分为锁定剧本与导演视觉方案两个 DOCX，并统一使用微软雅黑。

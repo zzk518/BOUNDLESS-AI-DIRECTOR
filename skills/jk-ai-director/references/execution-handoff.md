@@ -52,21 +52,23 @@ locks:
 
 ## 最终母版交付清单
 
-纯文字全流程至少交付以下逻辑文件；在对话中可合并为一份有清晰标题的 Markdown，用户要求打包时再拆分：
+纯文字全流程在对话中可按清晰标题连续展示；用户要求文件、最终母版或分享包时，必须先形成两个不可合并的主 DOCX，再附可版本控制的 Markdown 与可选表格：
 
 1. `00-project-receipt.md`：输入、假设、锁定项、格式和版本；
-2. `01-locked-screenplay.md` 或 `01-locked-screenplay.docx`：可独立阅读的最终锁定剧本；
-3. `02-screenplay-change-log.md`：导演阶段所有微调、理由和传播范围；
-4. `03-director-plan.md`：四轴、首刷体验、方法权重、关系压力和画面语法；
-5. `04-storyboard.md`，可另附 `04-storyboard.csv/xlsx`：连续镜号、时码、走位、机位与声音；
-6. `05-continuity-bible.md`：人物、服装、道具、空间、光向与状态；
-7. `06-visual-assets.md`：人物/场景/道具文字设定与锁；
-8. `07-keyframe-prompts.md`：关键帧及可选三帧视觉证明提示词；
-9. `08-video-prompts.md`：4–15 秒同场景多镜提示词；
-10. `09-sound-edit.md`：声音层、剪辑、字幕/准确文字合成；
-11. `10-execution-manifest.md`：任务、依赖、版本、人工状态与验收标准。
+2. `01-锁定剧本.docx`：只包含可独立阅读的最终锁定剧本，不放导演阐述、分镜、资产或提示词；
+3. `02-导演视觉方案.docx`：包含四轴导演方案、首刷体验、关系压力与画面语法、走位节奏、剧本微调记录、分镜、连续性圣经、视觉资产、关键帧/视频提示词、声音剪辑和执行说明；
+4. `01-locked-screenplay.md` 与 `02-director-visual-plan.md`：两个主 DOCX 的可版本控制文本副本；
+5. `02-screenplay-change-log.md`：导演阶段所有微调、理由和传播范围；
+6. `03-director-plan.md`：四轴、首刷体验、方法权重、关系压力和画面语法；
+7. `04-storyboard.md`，可另附 `04-storyboard.csv/xlsx`：连续镜号、时码、走位、机位与声音；
+8. `05-continuity-bible.md`：人物、服装、道具、空间、光向与状态；
+9. `06-visual-assets.md`：人物/场景/道具文字设定与锁；
+10. `07-keyframe-prompts.md`：关键帧及可选三帧视觉证明提示词；
+11. `08-video-prompts.md`：4–15 秒同场景多镜提示词；
+12. `09-sound-edit.md`：声音层、剪辑、字幕/准确文字合成；
+13. `10-execution-manifest.md`：任务、依赖、版本、人工状态与验收标准。
 
-默认对话交付格式为 Markdown。用户要求“文档”“最终母版”或分享包时，以 DOCX 为人读主文档、Markdown 为可版本控制文本，CSV/XLSX 只承担表格互操作；无论采用何种容器，完整锁定剧本都不得省略。
+默认对话交付格式为 Markdown。用户要求“文档”“最终母版”或分享包时，`01-锁定剧本.docx` 与 `02-导演视觉方案.docx` 是两个独立的人读主文档，禁止合并；Markdown 为可版本控制文本，CSV/XLSX 只承担表格互操作。两个 DOCX 的全部文字区域统一使用微软雅黑，包括标题、正文、对白、表格、页眉页脚以及中英文字符；可以改变字号、字重与段落间距，但不混用其他字体。无论采用何种容器，完整锁定剧本都不得省略。
 
 ## 纯文字边界
 
