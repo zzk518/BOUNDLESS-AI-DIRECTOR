@@ -2,6 +2,11 @@ name: Publish release
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: Release tag without the leading v
+        required: true
+        default: 1.1.0
 
 permissions:
   contents: write
@@ -13,18 +18,18 @@ jobs:
       - name: Check out the release tag
         uses: actions/checkout@v4
         with:
-          ref: v1.0.0
+          ref: v${{ inputs.version }}
 
       - name: Build the shareable ZIP
         run: >-
-          zip -r JK-AI-Director-v1.0.0.zip
+          zip -r JK-AI-Director-v${{ inputs.version }}.zip
           README.md VERSION install.ps1 skills tests .gitignore
 
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
-          gh release create v1.0.0 JK-AI-Director-v1.0.0.zip
+          gh release create v${{ inputs.version }} JK-AI-Director-v${{ inputs.version }}.zip
           --repo "$GITHUB_REPOSITORY"
-          --title "JK AI Director v1.0.0"
-          --notes "Initial public release: two text-only AI skills for screenwriting and directing, with installation and contract tests."
+          --title "JK AI Director v${{ inputs.version }}"
+          --notes "Text-only screenwriting and directing skills with locked-screenplay delivery, cinematic frame grammar, storyboard, continuity, visual assets, and image/video prompt contracts."

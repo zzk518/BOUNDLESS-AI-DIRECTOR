@@ -1,5 +1,19 @@
 # 分镜、连续性与视频提示词合同
 
+## 画面语法前置字段
+
+关键镜或关键镜组除镜号、时码外增加：
+
+- `unresolvable_state`：本场不可同时满足的两股力量；
+- `relationship_pressure`：谁看谁、谁知道更多、谁受空间限制、观众站在哪里；
+- `visual_traffic`：视线入口 → 阻挡/加速 → 落点 → 未决边缘信息 → 余味；
+- `camera_position`：机位区域、高度、距离、拍摄轴、主体占比、前景遮挡和对焦层；
+- `visual_engine`：一个主发动机、最多两个辅助发动机；
+- `color_source`：主要色域、强调色及各自物理来源；
+- `capture_base` 与 `imperfection_family`：一个捕获基底和一个主要瑕疵族。
+
+这些字段解释镜头为什么这样拍，不要求每个普通过渡镜重复长篇填写。完整方法见 [cinematic-frame-grammar.md](cinematic-frame-grammar.md)。
+
 ## 分镜表字段
 
 每镜至少包含：
